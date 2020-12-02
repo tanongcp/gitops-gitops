@@ -17,7 +17,7 @@ pipeline {
       }
     }
     stage ('Apply resources') {
-      steps {
+     
 		when {
 			branch 'master'
 		}
@@ -25,7 +25,7 @@ pipeline {
 			sh 'oc apply -k config'
 			sh './wait_oauth.sh'
 		}
-      }
+      
     }
     stage ('Verify test user') {
      
